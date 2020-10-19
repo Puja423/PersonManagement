@@ -28,7 +28,7 @@ namespace personManagement
             AddRecords(listPersonInCity);
             Reterieving_TopTwoRecord_forAgels_LessThanSixty(listPersonInCity);
             CheckingForTeenagerPerson(listPersonInCity);
-            //CheckingAverageAgeInList(listPersonInCity);
+            CheckingAverageAgeInList(listPersonInCity);
             //CheckNameIsPresentOrNot(listPersonInCity);
             //SkipRecordLess60(listPersonInCity);
             //RemoveSpecificName(listPersonInCity);
@@ -67,6 +67,15 @@ namespace personManagement
             {
                 Console.WriteLine("no,we dont have");
             }
+        }
+        private static void CheckingAverageAgeInList(List<Person> listPersonInCity)
+        {
+
+            Console.WriteLine(" Average of all the person is...");
+            double avgAge = listPersonInCity.Average(e => e.Age);
+            Console.WriteLine("The average of all the person's age is: " + avgAge);
+
+
         }
     }
 }
