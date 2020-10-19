@@ -101,5 +101,16 @@ namespace personManagement
             }
 
         }
+        private static void RemoveSpecificName(List<Person> listPersonInCity)
+        {
+
+            Console.WriteLine("\nRemoving all the persons record from list that have ");
+           listPersonInCity.RemoveAll(e => (e.Name == "SAM"));
+            if (listPersonInCity.TrueForAll(e => e.Name != "SAM"))
+            {
+                Console.WriteLine("No person is found with 'SAM' name in current list");
+            }
+
+        }
     }
 }
