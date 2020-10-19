@@ -29,7 +29,7 @@ namespace personManagement
             Reterieving_TopTwoRecord_forAgels_LessThanSixty(listPersonInCity);
             CheckingForTeenagerPerson(listPersonInCity);
             CheckingAverageAgeInList(listPersonInCity);
-            //CheckNameIsPresentOrNot(listPersonInCity);
+            CheckNameIsPresentOrNot(listPersonInCity);
             //SkipRecordLess60(listPersonInCity);
             //RemoveSpecificName(listPersonInCity);
 
@@ -75,6 +75,30 @@ namespace personManagement
             double avgAge = listPersonInCity.Average(e => e.Age);
             Console.WriteLine("The average of all the person's age is: " + avgAge);
 
+
+        }
+        private static void CheckNameIsPresentOrNot(List<Person> listPersonInCity)
+        {
+
+            Console.WriteLine("Checking whether a person having name exists or not...");
+            if (listPersonInCity.Exists(e => e.Name == "Ram"))
+            {
+                Console.WriteLine("Yes,  exists in our list");
+            }
+            else
+            {
+                Console.WriteLine("sorry,Not exist in our list");
+            }
+
+        }
+        private static void SkipRecordLess60(List<Person> listPersonInCity)
+        {
+
+            Console.WriteLine("Skipping whose age is less than 60 years...");
+            foreach (Person data in listPersonInCity.SkipWhile(e => e.Age < 60))
+            {
+                Console.WriteLine("Name : " + data.Name + " Age: " + data.Age);
+            }
 
         }
     }
